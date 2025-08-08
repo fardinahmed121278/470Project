@@ -1,0 +1,172 @@
+/* PlanetCompare.css */
+
+.planet-compare {
+  background: radial-gradient(ellipse at center, #000000 0%, #0a0a0a 90%);
+  color: #e0f7fa;
+  min-height: 100vh;
+  padding: 40px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.compare-header {
+  font-size: 3rem;
+  margin-bottom: 40px;
+  color: #00fff7;
+  text-shadow:
+    0 0 8px #00fff7,
+    0 0 15px #00b8ba,
+    0 0 20px #00b8ba;
+}
+
+.selection-panel {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 20px 30px;
+  box-shadow:
+    0 0 10px #00fff7,
+    inset 0 0 20px #00b8ba;
+  margin-bottom: 40px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.selection-panel label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #a0f0f5;
+  text-shadow: 0 0 4px #00b8ba;
+}
+
+/* Updated dropdown styling */
+.selection-panel select {
+  margin-top: 8px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1.5px solid #00fff7;       /* subtle bright border */
+  font-size: 1rem;
+  background-color: #0a0a0a;         /* very dark background */
+  color: #e0f7fa;                    /* light text for contrast */
+  box-shadow:
+    0 0 8px #00fff7;                /* soft glowing shadow */
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.selection-panel select:hover,
+.selection-panel select:focus {
+  background-color: #003838;         /* dark teal highlight on hover/focus */
+  outline: none;
+  box-shadow:
+    0 0 15px #00fff7,               /* stronger glowing effect */
+    0 0 8px #00b8ba inset;
+}
+
+.comparison-grid {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  max-width: 960px;
+}
+
+.planet-card-compare {
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 20px;
+  box-shadow:
+    0 0 15px #00fff7,
+    inset 0 0 25px #007a7a;
+  padding: 30px 20px;
+  width: 280px;
+  color: #e0f7fa;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.planet-card-compare:hover {
+  transform: scale(1.05);
+  box-shadow:
+    0 0 25px #00fff7,
+    inset 0 0 40px #00b8ba;
+}
+
+.planet-image-compare {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 3px solid #00fff7;
+  box-shadow:
+    0 0 15px #00fff7,
+    inset 0 0 10px #007a7a;
+  margin: 0 auto 20px;
+  object-fit: cover;
+  animation: slow-rotate 20s linear infinite;
+}
+
+@keyframes slow-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.planet-name-compare {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  text-shadow:
+    0 0 8px #00fff7;
+}
+
+.planet-description {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  line-height: 1.4;
+  min-height: 60px;
+}
+
+.facts-list {
+  text-align: left;
+  font-size: 0.9rem;
+  padding-left: 20px;
+  list-style-type: square;
+  color: #a0f0f5;
+}
+
+.no-selection {
+  font-size: 1.2rem;
+  color: #666;
+  margin-top: 60px;
+  font-style: italic;
+}
+
+@media (max-width: 700px) {
+  .comparison-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .planet-card-compare {
+    width: 90%;
+  }
+}
+
+/* Distance from sun style for compare cards */
+.distance-from-sun {
+  font-weight: 600;
+  margin: 12px 0 20px;
+  color: #00fff7;
+  text-shadow:
+    0 0 6px #00fff7,
+    0 0 10px #00b8ba;
+  font-size: 1.1rem;
+}

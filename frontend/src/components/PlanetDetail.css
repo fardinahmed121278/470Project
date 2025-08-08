@@ -1,0 +1,110 @@
+.planet-detail {
+  position: relative;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6); /* dark overlay for readability */
+  z-index: 1;
+}
+
+.content {
+  position: relative;
+  max-width: 700px;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 25px 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.back-link {
+  color: #ccc;
+  text-decoration: underline;
+  display: inline-block;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.back-link:hover {
+  color: white;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 3rem;
+  text-shadow: 0 0 10px #000;
+}
+
+.planet-image {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 15px;
+  margin: 20px 0;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.description {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.facts-list {
+  list-style-type: disc;
+  padding-left: 20px;
+  font-size: 1.1rem;
+}
+
+.facts-list li {
+  margin-bottom: 8px;
+}
+
+/* Mass styling */
+.mass {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 20px; /* space above for separation */
+  color: #00fff7;
+  text-shadow:
+    0 0 6px #00fff7,
+    0 0 10px #00b8ba;
+}
+
+/* For the not found state */
+.planet-detail--notfound {
+  min-height: 100vh;
+  color: white;
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  text-align: center;
+}
+
+/* Updated distance-from-sun styling */
+.distance-from-sun {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 20px; /* space above for separation */
+  color: #00fff7;
+  text-shadow:
+    0 0 6px #00fff7,
+    0 0 10px #00b8ba;
+}

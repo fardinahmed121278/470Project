@@ -1,0 +1,56 @@
+.gravity-simulator {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: radial-gradient(ellipse at center, #000 0%, #050505 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.gravity-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.planet-controls {
+  position: relative;
+  z-index: 2;
+  margin-top: 20px;
+  text-align: center;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 15px;
+  border-radius: 15px;
+}
+
+.planet-controls .buttons button,
+.clear-btn {
+  margin: 5px;
+  padding: 10px 15px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  background: linear-gradient(135deg, #8a2be2, #4b0082);
+  color: white;
+  transition: all 0.2s ease;
+}
+
+.planet-controls .buttons button:hover,
+.clear-btn:hover {
+  transform: scale(1.1);
+  background: linear-gradient(135deg, #ffb347, #ffcc33);
+}
+
+.gravity-info {
+  margin-top: 15px;
+  color: #ffeb3b;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-shadow: 0 0 5px #fff;
+}

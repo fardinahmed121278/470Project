@@ -122,3 +122,44 @@
 .logout-button:hover {
   background-color: #e0003c;
 }
+.gravity-btn {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  z-index: 1000; /* make sure it’s on top */
+  padding: 10px 15px;
+  background: linear-gradient(135deg, #8a2be2, #4b0082);
+  color: white;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 0 12px rgba(138, 43, 226, 0.6);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.gravity-btn:hover {
+  transform: scale(1.1);
+  background: linear-gradient(135deg, #ffb347, #ffcc33);
+}
+
+.quiz-btn {
+  position: fixed;
+  top: 140px; /* below the gravity button */
+  right: 20px;
+  z-index: 1000;
+  padding: 10px 15px;
+  background: linear-gradient(135deg, #ff4500, #ff6347);
+  color: white;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 0 12px rgba(255, 69, 0, 0.6);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.quiz-btn:hover {
+  transform: scale(1.1);
+  background: linear-gradient(135deg, #ffa500, #ffd700);
+}
+
+

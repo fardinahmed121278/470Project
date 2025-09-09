@@ -1,3 +1,6 @@
+/* ======================= */
+/* Quiz Container & Card */
+/* ======================= */
 .quiz-container {
   display: flex;
   justify-content: center;
@@ -15,28 +18,80 @@
   padding: 25px 40px;
   border-radius: 15px;
   box-shadow: 0 0 20px rgba(0,255,255,0.3);
+  width: 90%;
+  max-width: 500px;
 }
 
+/* ======================= */
+/* Question Text */
+/* ======================= */
 .question {
   font-size: 1.2rem;
   margin: 20px 0;
 }
 
-.options button {
-  display: block;
-  margin: 10px auto;
-  padding: 10px 20px;
-  font-size: 1rem;
-  border-radius: 12px;
-  border: none;
-  cursor: pointer;
-  font-weight: bold;
-  background: linear-gradient(135deg, #ff4500, #ff6347);
-  color: white;
-  transition: all 0.2s ease;
+/* ======================= */
+/* Options Vertical Layout */
+/* ======================= */
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
 }
 
-.options button:hover {
-  transform: scale(1.05);
-  background: linear-gradient(135deg, #ffa500, #ffd700);
+.options button {
+  padding: 12px;
+  border-radius: 10px;
+  border: 2px solid white;
+  background: rgba(0,0,0,0.4);
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* ======================= */
+/* Correct / Wrong Feedback */
+/* ======================= */
+.options button.correct {
+  background-color: #4caf50; /* green */
+  border-color: #4caf50;
+  color: white;
+}
+
+.options button.wrong {
+  background-color: #f44336; /* red */
+  border-color: #f44336;
+  color: white;
+}
+
+/* Hover effect (only if not already answered) */
+.options button:hover:not(.correct):not(.wrong) {
+  background-color: rgba(255,255,255,0.2);
+}
+
+/* ======================= */
+/* Result Card Styling */
+/* ======================= */
+.result-card h2 {
+  margin-bottom: 15px;
+}
+
+.result-card p {
+  font-size: 1.1rem;
+}
+
+/* ======================= */
+/* Orbit Button (extra) */
+/* ======================= */
+.orbit-btn { 
+  border-color: #ff69b4; 
+  color: #ff69b4; 
+}
+
+.orbit-btn:hover {
+  background-color: #ff69b4;
+  color: black;
+  box-shadow: 0 0 20px #ff69b4, 0 0 30px #ff69b4, 0 0 40px #ff69b4;
 }

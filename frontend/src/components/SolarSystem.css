@@ -1,0 +1,46 @@
+/* ======================= */
+/* SolarSystem / CSS */
+/* ======================= */
+
+/* Fullscreen canvas */
+.orbit-container canvas {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(ellipse at center, #000000 0%, #0d0d0d 100%);
+}
+
+/* Optional container for controls */
+.orbit-container {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Controls styling */
+.controls {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: rgba(0,0,0,0.6);
+  padding: 10px 15px;
+  border-radius: 12px;
+  color: white;
+  font-family: sans-serif;
+  z-index: 10;
+}
+
+.controls label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem;
+  gap: 5px;
+}
+
+.controls input[type="range"] {
+  width: 150px;
+}
+
+/* Optional: cursor when adding planets */
+.orbit-container canvas.dragging {
+  cursor: crosshair;
+}

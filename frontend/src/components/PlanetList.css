@@ -1,3 +1,7 @@
+/* ======================= */
+/* PlanetList Full CSS */
+/* ======================= */
+
 .planet-list {
   display: flex;
   flex-direction: column;
@@ -28,6 +32,9 @@
   50% { opacity: 0.3; }
 }
 
+/* ======================= */
+/* Title */
+/* ======================= */
 .title {
   font-size: 3rem;
   margin-bottom: 20px;
@@ -35,6 +42,9 @@
   z-index: 2;
 }
 
+/* ======================= */
+/* Planet Grid & Cards */
+/* ======================= */
 .planet-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
@@ -59,9 +69,9 @@
 }
 
 .planet-icon {
-  font-size: 4.5rem; /* bigger emoji */
-  display: inline-block; /* required for rotation */
-  animation: slowRotate 15s linear infinite; /* slow spin */
+  font-size: 4.5rem;
+  display: inline-block;
+  animation: slowRotate 15s linear infinite;
   transform-origin: center center;
   filter: drop-shadow(0 0 8px rgba(0, 255, 255, 0.8))
           drop-shadow(0 0 15px rgba(0, 255, 255, 0.6));
@@ -72,94 +82,158 @@
   to { transform: rotate(360deg); }
 }
 
-.fade-in {
-  opacity: 0;
-  animation: fadeIn 1.2s forwards;
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
-}
-.compare-btn {
-  position: fixed; /* fixed so it stays on screen even on scroll */
+/* ======================= */
+/* Floating Buttons Container */
+/* ======================= */
+.floating-btn-container {
+  position: fixed;
   top: 20px;
   right: 20px;
-  background: rgba(127, 255, 212, 0.85); /* aquamarine translucent */
-  color: #000;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* evenly spaced vertically */
+}
+
+/* ======================= */
+/* Neon Buttons Base */
+/* ======================= */
+.floating-btn {
+  display: block;
+  padding: 10px 18px;
+  border: 2px solid;
+  border-radius: 12px;
+  background-color: rgba(0, 0, 0, 0.6);
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  animation: neonPulse 2s infinite alternate;
+  min-width: 140px; /* same width for all buttons */
+  font-size: 1rem;
+}
+
+/* ======================= */
+/* Individual Neon Colors */
+.compare-btn { border-color: #7fffd4; color: #7fffd4; }
+.compare-btn:hover {
+  background-color: #7fffd4;
+  color: black;
+  box-shadow: 0 0 20px #7fffd4, 0 0 30px #7fffd4, 0 0 40px #7fffd4;
+}
+
+.gravity-btn { border-color: #8a2be2; color: #8a2be2; }
+.gravity-btn:hover {
+  background-color: #8a2be2;
+  color: white;
+  box-shadow: 0 0 20px #8a2be2, 0 0 30px #8a2be2, 0 0 40px #8a2be2;
+}
+
+.quiz-btn { border-color: #ff4500; color: #ff4500; }
+.quiz-btn:hover {
+  background-color: #ff4500;
+  color: black;
+  box-shadow: 0 0 20px #ff4500, 0 0 30px #ff4500, 0 0 40px #ff4500;
+}
+
+.news-btn { border-color: #00ffff; color: #00ffff; }
+.news-btn:hover {
+  background-color: #00ffff;
+  color: black;
+  box-shadow: 0 0 20px #00ffff, 0 0 30px #00ffff, 0 0 40px #00ffff;
+}
+
+.launch-btn { border-color: #ffd700; color: #ffd700; }
+.launch-btn:hover {
+  background-color: #ffd700;
+  color: black;
+  box-shadow: 0 0 20px #ffd700, 0 0 30px #ffd700, 0 0 40px #ffd700;
+}
+
+/* ======================= */
+/* Neon Pulse Animation */
+@keyframes neonPulse {
+  0% { box-shadow: 0 0 5px currentColor, 0 0 10px currentColor, 0 0 15px currentColor; }
+  50% { box-shadow: 0 0 12px currentColor, 0 0 20px currentColor, 0 0 28px currentColor; }
+  100% { box-shadow: 0 0 8px currentColor, 0 0 16px currentColor, 0 0 24px currentColor; }
+}
+
+/* ======================= */
+/* Meteor Shower */
+.meteor-shower {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.meteor {
+  position: absolute;
+  background: linear-gradient(45deg, white, rgba(255,255,255,0));
+  border-radius: 50%;
+  transform: rotate(45deg);
+  animation-name: meteorFall;
+  animation-timing-function: linear;
+}
+
+@keyframes meteorFall {
+  0% { transform: translateY(0) translateX(0) rotate(45deg); opacity: 1; }
+  100% { transform: translateY(800px) translateX(400px) rotate(45deg); opacity: 0; }
+}
+
+/* Meteor Button */
+.meteor-btn {
+  position: relative;
+  background: linear-gradient(135deg, #00ffff, #7fffd4);
+  color: black;
   padding: 10px 18px;
   border-radius: 25px;
   font-weight: bold;
   text-decoration: none;
-  box-shadow: 0 0 15px #7fffd4;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  z-index: 9999; /* on top of everything */
+  box-shadow: 0 0 15px #00ffff;
   cursor: pointer;
-  user-select: none;
+  transition: all 0.3s ease;
 }
 
-.compare-btn:hover {
+.meteor-btn:hover {
   background: #7fffd4;
   box-shadow: 0 0 25px #40e0d0;
-  color: #000;
-}
-
-/* Add this CSS for the Logout Button */
-.logout-button {
-  background-color: #ff0044;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1rem;
-  margin-top: 20px; /* Add some space between the grid and the button */
-  z-index: 2; /* Ensure it's above the background */
-}
-
-/* You can also style the button on hover */
-.logout-button:hover {
-  background-color: #e0003c;
-}
-.gravity-btn {
-  position: fixed;
-  top: 80px;
-  right: 20px;
-  z-index: 1000; /* make sure it’s on top */
-  padding: 10px 15px;
-  background: linear-gradient(135deg, #8a2be2, #4b0082);
-  color: white;
-  border-radius: 12px;
-  text-decoration: none;
-  font-weight: bold;
-  box-shadow: 0 0 12px rgba(138, 43, 226, 0.6);
-  transition: transform 0.2s ease, background 0.2s ease;
-}
-
-.gravity-btn:hover {
   transform: scale(1.1);
-  background: linear-gradient(135deg, #ffb347, #ffcc33);
 }
 
-.quiz-btn {
-  position: fixed;
-  top: 140px; /* below the gravity button */
-  right: 20px;
-  z-index: 1000;
-  padding: 10px 15px;
-  background: linear-gradient(135deg, #ff4500, #ff6347);
-  color: white;
+/* ======================= */
+/* News Section */
+.news-section {
+  margin-top: 50px;
+  padding: 20px;
+  background-color: rgba(0,0,0,0.5);
   border-radius: 12px;
-  text-decoration: none;
-  font-weight: bold;
-  box-shadow: 0 0 12px rgba(255, 69, 0, 0.6);
-  transition: transform 0.2s ease, background 0.2s ease;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.quiz-btn:hover {
-  transform: scale(1.1);
-  background: linear-gradient(135deg, #ffa500, #ffd700);
+.news-item {
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  padding: 10px 0;
 }
 
+.news-item h3 { margin: 0 0 5px 0; }
+.news-item p { margin: 0; font-size: 0.9rem; color: #ccc; }
+
+.orbit-btn {
+  border-color: #ff69b4; /* hot pink */
+  color: #ff69b4;
+}
+
+.orbit-btn:hover {
+  background-color: #ff69b4;
+  color: black;
+  box-shadow: 0 0 20px #ff69b4, 0 0 30px #ff69b4, 0 0 40px #ff69b4;
+}
 
